@@ -28,6 +28,7 @@
 ## Running Locally
 
 1. **Clone this repository**:
+
    ```bash
    git clone https://github.com/dicethedev/baseswap-subaccount-spendlimits-testnet.git
    cd baseswap-subaccount-spendlimits-testnet
@@ -36,6 +37,12 @@
 
    Create a .env file and use it for the environment.
 
+   copy and paste this .env.example to your .env -
+
+   # Chech base spend limits docs for more info - https://docs.base.org/identity/smart-wallet/guides/spend-limits
+   SPENDER_PRIVATE_KEY=""
+   NEXT_PUBLIC_SPENDER_ADDRESS=""
+
    npm run dev
-   
+
    ```
