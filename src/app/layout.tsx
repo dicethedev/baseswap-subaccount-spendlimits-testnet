@@ -1,9 +1,12 @@
+import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
-import { Providers } from "@/constants/providers";
+import { headers } from "next/headers";
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { cookieToInitialState } from "wagmi";
+import { Providers } from "./providers";
+import getConfig from "next/config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,18 +24,23 @@ export const metadata: Metadata = {
     "BaseSwap - Seamless token transfers and swaps without approval popups, powered by Base Smart Wallet Sub Accounts",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const initialState = cookieToInitialState(
+    getConfig(),
+    headersList.get("cookie")
+  );
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers>{children}</Providers>
         <Toaster position="top-right" />
+        <Providers initialState={initialState}>{children}</Providers>
       </body>
     </html>
   );
