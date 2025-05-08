@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BaseSwap - Base Builder Quest 5 Submission
 
-## Getting Started
+## No-Popup Transactions with Smart Wallet Sub Accounts and Spend Limits
 
-First, run the development server:
+**BaseSwap** demonstrates how to leverage **Base's Smart Wallet Sub Accounts** and **Spend Limits** to create a seamless user experience where transactions can be executed without authentication popups.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![SilentSpend](path-to-image)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Connect your Base Sepolia wallet** - Connect and automatically switch to the Base Sepolia network.
+- **Create Sub Accounts with Spend Limits** - Set up daily and per-transaction limits for secure transactions.
+- **Execute transactions without popups** - Send ETH without seeing a confirmation dialog.
+- **Live transaction tracking** - View your successful transactions with links to BaseScan.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technology Stack
 
-## Learn More
+- **Frontend**: NextJS for the user interface
+- **Ethereum Interactions**: Wagmi/Viem for interacting with the Ethereum blockchain
+- **Base SDK**: Base Smart Wallet SubAccounts SDK
 
-To learn more about Next.js, take a look at the following resources:
+## How It Works
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Connect Wallet**: Users connect their wallet to the dApp (only needed once).
+2. **Send Transactions**: Users can send transactions through these Sub Accounts without needing to approve each transaction.
+3. **Base SubAccounts Module**: The application uses the SubAccounts Module from Base, which is currently available only on **Base Sepolia Testnet**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Running Locally
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone this repository**:
+   ```bash
+   git clone https://github.com/your-username/silentspend.git
+   ```
